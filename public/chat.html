@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="message-form">
+      <div class="heading">
+        <div class="o">C</div>
+        <div class="l">h</div>
+        <div class="l">a</div>
+        <div class="t">t</div>
+        <div class="o">R</div>
+        <div class="l">o</div>
+        <div class="l">o</div>
+        <div class="l">m</div>
+      </div>
+      <div class="wrapper">
+        <div id="messages"></div>
+        <form id="messageForm">
+          <input type="text" id="message" placeholder="Type a message" required />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+html{
+    background: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 3rem;
+    color: #f1f1f1;
+}
+
+.login-form ,.signup-form{
+    width: 400px;
+    height: 550px;
+    padding: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form h1{
+    text-align: center;
+    color: #f1f1f1;
+    margin-bottom: 20px;
+    font-size: 4rem;
+}
+
+#loginForm {
+    width: 400px;
+    margin: 80px;
+    align-items: center;
+}
+
+#signupForm {
+    width: 400px;
+    margin: 80px;
+    align-items: center;
+}
+
+.signup-form h1{
+    text-align: center;
+    color: #f1f1f1;
+    margin-bottom: 70px;
+    font-size: 4rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 270px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f1f1f1;
+    background-color: #001011;
+    color:#f1f1f1;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #f1f1f1; /* Adjust the color as needed */
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #27b8f1;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0e9fd8;
+}
+
+button:active {
+    background-color: #0c8dc0;
+}
+
+.message-form{
+    width: 50rem;
+    height: 550px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:10px;
+    width: 50rem;
+    max-height: 450px;
+    margin-bottom: 10px;
+}
+
+.message-form h1{
+    margin-bottom: 30px;
+    font-size: 4rem;
+}
+
+.message-form input{
+    width: 30rem;
+}
+
+#messages {
+    width: 80%;
+    height: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    resize: vertical; 
+    overflow-y: auto;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    max-width: fit-content;
+
+}
+
+.sent {
+    align-self: flex-end;
+    background: #001011;
+    color: #27b8f1;
+    border-radius: 8px 0 8px 8px;
+}
+
+.received {
+    align-self: flex-start;
+    background: #27b8f1;
+    border-radius: 0 8px 8px 8px;
+    color: #001011;
+}
+
+.button-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #27b8f1;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 8px;
+    width: 60px;
+    margin-right: 8px;
+}
+
+.button:hover {
+    background-color: #0e9fd8;
+}
+
+.button:active {
+    background-color: #0c8dc0;
+}
+
+.welcome-page-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    color: #f1f1f1;
+    box-shadow: 8px 8px 8px  rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    width: 700px;
+    height: 400px;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    height: auto;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #001011;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+.l,.g,.i,.n{
+    font-size: 4rem;
+    color:#f1f1f1;
+    font-weight: 700;
+}
+
+.o{
+    font-size: 4rem;
+    color:#27b8f1;
+    font-weight: 700;
+}
+.t{
+    font-size: 4rem;
+    color:#f1f1f1;
+    font-weight: 700;
+    margin-right: 20px;
+}
