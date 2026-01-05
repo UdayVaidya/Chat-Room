@@ -8,6 +8,9 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
+require("dotenv").config();
+
+
 app.use(express.json());
 app.use(express.static("public"));
 app.use("/auth", authRoutes);
@@ -15,7 +18,7 @@ app.use("/auth", authRoutes);
 io.use(async (socket, next) => {
   const token = socket.handshake.auth.token;
   try {
-    const payload = jwt.verify(token, "secret"); //checks
+    const payload = jwt.verify(token, process.env.JWT_SECRET); //checks
     socket.user = await User.findByPk(payload.id);
     next();
   } catch (error) {
@@ -33,6 +36,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
+server.listen(process.env.PORT || 3000, () => {
   console.log("Server is running on port 3000");
 });
+

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "keywords": [],
   "author": "Uday Vaidya",
@@ -14,6 +15,7 @@
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^17.2.3",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.10.2",
