@@ -3,16 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat App</title>
+    <title>Welcome - ConnectHub</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Welcome Page Specific Styles */
+      .welcome-container {
+        width: 100%;
+        max-width: 600px;
+        padding: 60px 40px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .chat-icon {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 30px;
+        filter: drop-shadow(0 4px 20px rgba(255, 107, 53, 0.4));
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+      }
+
+      .welcome-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.2;
+      }
+
+      .welcome-subtitle {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 40px;
+        line-height: 1.6;
+        max-width: 450px;
+      }
+
+      .button-container {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .welcome-button {
+        padding: 16px 40px;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .welcome-button.primary {
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+      }
+
+      .welcome-button.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+      }
+
+      .welcome-button.secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .welcome-button.secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .welcome-button:active {
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .welcome-container {
+          padding: 40px 30px;
+        }
+
+        .welcome-title {
+          font-size: 2.2rem;
+        }
+
+        .welcome-subtitle {
+          font-size: 1rem;
+        }
+
+        .button-container {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .welcome-button {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="welcome-page-wrapper">
-      <img src="chat-line.svg" alt="chat-img" class="chat">
-      <h1>Welcome to the Chat App</h1>
-      <div class="button-div">
-        <a class="button" href="login.html">Login</a>
-        <a class="button" href="signup.html">Sign Up</a>
+    <div class="welcome-container">
+      <img src="chat-line.svg" alt="Chat Icon" class="chat-icon">
+      <h1 class="welcome-title">Welcome to ConnectHub</h1>
+      <p class="welcome-subtitle">
+        Connect with friends and colleagues in real-time. 
+        Join conversations, share ideas, and stay connected.
+      </p>
+      <div class="button-container">
+        <a class="welcome-button primary" href="login.html">Login</a>
+        <a class="welcome-button secondary" href="signup.html">Sign Up</a>
       </div>
     </div>
   </body>

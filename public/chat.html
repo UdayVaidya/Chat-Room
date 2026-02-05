@@ -3,25 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat</title>
+    <title>ConnectHub - Chat</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="message-form">
       <div class="heading">
         <div class="o">C</div>
-        <div class="l">h</div>
-        <div class="l">a</div>
+        <div class="l">o</div>
+        <div class="l">n</div>
+        <div class="l">n</div>
+        <div class="l">e</div>
+        <div class="l">c</div>
         <div class="t">t</div>
-        <div class="o">R</div>
-        <div class="l">o</div>
-        <div class="l">o</div>
-        <div class="l">m</div>
+        <div class="o">H</div>
+        <div class="l">u</div>
+        <div class="l">b</div>
       </div>
+      
+      <div class="status-bar">
+        <div class="online-count">
+          <span class="online-indicator"></span>
+          <span><span id="userCount">0</span> online</span>
+        </div>
+        <div class="connection-status">Connecting...</div>
+      </div>
+      
       <div class="wrapper">
         <div id="messages"></div>
         <form id="messageForm">
-          <input type="text" id="message" placeholder="Type a message" required />
+          <input type="text" id="message" placeholder="Type a message..." required autocomplete="off" />
           <button type="submit">Send</button>
         </form>
       </div>

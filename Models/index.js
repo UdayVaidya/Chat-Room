@@ -1,9 +1,33 @@
 const { Sequelize, DataTypes } = require("sequelize");
+require("dotenv").config();
 
-const sequelize = new Sequelize("chat_users", "root", "TExt2003@", {
-  host: "localhost",
-  dialect: "mysql",
-});
+// Create Sequelize instance with environment variables
+const sequelize = new Sequelize(
+  process.env.DB_NAME || "chat_users",
+  process.env.DB_USER || "root",
+  process.env.DB_PASSWORD || "",
+  {
+    host: process.env.DB_HOST || "localhost",
+    dialect: "mysql",
+    logging: false, // Disable SQL query logging in production
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
+  }
+);
+
+// Test database connection
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("✅ Database connection established successfully");
+  })
+  .catch((err) => {
+    console.error("❌ Unable to connect to the database:", err.message);
+  });
 
 const User = require("./User")(sequelize, DataTypes);
 const Message = require("./message")(sequelize, DataTypes);
@@ -11,7 +35,10 @@ const Message = require("./message")(sequelize, DataTypes);
 User.hasMany(Message);
 Message.belongsTo(User);
 
-sequelize.sync();
+// Sync database with error handling
+sequelize.sync().catch((err) => {
+  console.error("❌ Database sync failed:", err.message);
+});
 
 module.exports = { sequelize, User, Message };
 
